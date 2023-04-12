@@ -40,6 +40,12 @@ def acquire_mall():
 mall = acquire_mall()
 
 
+# In[22]:
+
+
+mall
+
+
 # In[18]:
 
 
@@ -56,4 +62,45 @@ mall.describe()
 
 
 type(mall)
+
+
+# In[23]:
+
+
+train_val, test = train_test_split(mall, train_size=0.7, random_state=1349)
+train, validate = train_test_split(train_val, train_size=0.8, random_state=1349)
+
+
+# In[28]:
+
+
+trains = train.dropna()
+
+
+# In[29]:
+
+
+trains.head()
+
+
+# In[47]:
+
+
+trains.shape
+
+
+# In[45]:
+
+
+plt.subplot(122)
+plt.scatter(trains.spending_score, trains.age, ec='black')
+plt.xlabel('Spending Score')
+plt.ylabel('Age')
+plt.title('Scaled')
+
+
+# In[ ]:
+
+
+
 
